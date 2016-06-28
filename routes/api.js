@@ -33,7 +33,7 @@ router.get('/leagues/season/:season', function(req, res, next) {
 	    res.json({name: season.name, leagues: leagues});
 	  }
 	});
-	
+
 });
 
 router.get('/teams/league/:league', function(req, res, next) {
@@ -60,9 +60,11 @@ router.get('/teams/league/:league', function(req, res, next) {
 
 });
 
+var swissIds = [599,598];
 router.get('/team/league/:league/team/:team', function(req, res, next) {
 
 	var games = [];
+	var isSwiss = _.includes(swissIds, parseInt(req.param('league')));
 
 	request('http://www.sandlotsports.biz/teams/?teamid='+req.param('team')+'&leagueid='+req.param('league'), function (error, response, html) {
 	  if (!error && response.statusCode == 200) {
@@ -80,10 +82,10 @@ router.get('/team/league/:league/team/:team', function(req, res, next) {
 	    	var team_url = cell.eq(4).find('a').attr('href');
 	    	var team_id = querystring.parse(team_url)['/teams/?teamId'];
 
-	    	var field = cell.eq(5).text().split('(')[0].trim();
-	    	var game_time = cell.eq(6).text().trim();
-	    	var color = cell.eq(7).text().trim();
-	    	var location = _.find(_locations, function(l) { 
+	    	var field = cell.eq(isSwiss ? 7 : 5).text().split('(')[0].trim();
+	    	var game_time = cell.eq(isSwiss ? 8 : 6).text().trim();
+	    	var color = cell.eq(isSwiss ? 9 : 7).text().trim();
+	    	var location = _.find(_locations, function(l) {
 	    		return field.toUpperCase().indexOf(l.regex.toUpperCase()) >= 0;
 	    	});
 	    	var diagram = cell.eq(5).find('a').eq(2).attr('href');
