@@ -24,6 +24,8 @@ module.exports = [
 { id:26, name: 'Swan Creek', regex:'swan', lat: 43.006156, long: -89.399781 },
 { id:27, name: 'Veterans Memorial', regex:'veteran', lat: 43.032228, long: -89.292939 },
 { id:28, name: 'Flagstone Park', regex:'flagstone', lat: 43.025158, long: -89.530724 },
-{ id:29, name: 'Secret Places', regex:'secret', lat: 43.027254, long: -89.276122 }
-
+{ id:29, name: 'Secret Places', regex:'secret', lat: 43.027254, long: -89.276122 },
+{ id:30, name: 'Elvehjem Park', regex:'elvehjem', lat: 43.079132, long: -89.291394 },
+{ id:31, name: 'Maple Prairie', regex:'maple', lat: 43.019308, long: -89.493998 },
+{ id:32, name: 'Pilgrim Park', regex:'pilgrim', lat: 43.026389, long: -89.493690 },
 ]
