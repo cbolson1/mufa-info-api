@@ -122,7 +122,7 @@ router.get('/announcements', function(req, res, next) {
 });
 
 router.get('/locations', function(req, res, next) {
-	res.json(_locations);
+	res.json(_.sortBy(_locations, "name"));
 });
 
 
