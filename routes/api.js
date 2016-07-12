@@ -106,8 +106,13 @@ router.get('/team/league/:league/team/:team', function(req, res, next) {
 	    	});
 
 	    });
+			// filter bad games
+			games = games.filter(function(g){
+				return g.date != '' || g.game_time != '';
+			})
 
-	    res.json({name: $('#pageName').text().split('(')[0].trim(), games: games});
+			var teamName = $('#pageName').text().split('(')[0].trim();
+	    res.json({name: teamName, games: games});
 	  }
 	});
 
