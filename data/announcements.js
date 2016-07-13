@@ -1,4 +1,4 @@
 module.exports = [
 	{content: 'Report bugs to tom@tomj.ninja'},
-	{version: 1, content: 'ANDROID USERS: This app will be changing locations in the app store, please download the new one as this app WILL STOP WORKING WITHIN 7 DAYS.    http://bit.ly/mufainfo'}
+	{version: 1, content: 'ANDROID USERS: This app WILL STOP WORKING WITHIN 7 DAYS. Please download the new one in the play store:    http://bit.ly/mufainfo or search \'mufa info\''}
 ]
