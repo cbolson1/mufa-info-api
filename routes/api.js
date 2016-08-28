@@ -12,9 +12,9 @@ var _seasons 		= require('../data/seasons'),
 	_announcements 	= require('../data/announcements');
 
 
-router.get('/seasons', function(req, res, next) {
-	res.json(_seasons);
-});
+// router.get('/seasons', function(req, res, next) {
+// 	res.json(_seasons);
+// });
 
 router.get('/leagues/season/:season', function(req, res, next) {
 	var season = _.find(_seasons, function(o) { return o.id == req.param('season') });
