@@ -12,6 +12,9 @@ var _seasons 		= require('../data/seasons'),
 	_announcements 	= require('../data/announcements');
 
 
+router.get('/seasons', function(req, res, next) {
+	res.json(_seasons);
+});
 
 router.get('/announcements', function(req, res, next) {
 	res.json(_announcements.filter(function(a){
