@@ -60,7 +60,7 @@ router.get('/teams/league/:league', function(req, res, next) {
 
 });
 
-var swissIds = [599,598];
+var swissIds = [599,598, 631, 632];
 router.get('/team/league/:league/team/:team', function(req, res, next) {
 
 	var games = [];
