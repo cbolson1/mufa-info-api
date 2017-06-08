@@ -47,9 +47,7 @@ router.get('/teams/league/:league', function(req, res, next) {
 	    	var rel = $(this).attr('href');
 	    	var url = querystring.parse(rel);
 
-	    	var teamName = $(this).text().split('.');
-	    	teamName.shift();
-	    	teamName = teamName.join('').trim();
+	    	var teamName = $(this).text();
 
 	    	teams.push({id: parseInt(url['/teams/?teamId']), name: teamName});
 	    });
