@@ -80,13 +80,13 @@ router.get('/team/league/:league/team/:team', function(req, res, next) {
 	    	var team_url = cell.eq(4).find('a').attr('href');
 	    	var team_id = querystring.parse(team_url)['/teams/?teamId'];
 
-	    	var field = cell.eq(5).text().split('(')[0].trim();
-	    	var game_time = cell.eq(6).text().trim();
-	    	var color = cell.eq(7).text().trim();
+	    	var field = cell.eq(7).text().split('(')[0].trim();
+	    	var game_time = cell.eq(8).text().trim();
+	    	var color = cell.eq(9).text().trim();
 	    	var location = _.find(_locations, function(l) {
 	    		return field.toUpperCase().indexOf(l.regex.toUpperCase()) >= 0;
 	    	});
-	    	var diagram = cell.eq(5).find('a').eq(2).attr('href');
+	    	var diagram = cell.eq(7).find('a').eq(2).attr('href');
 	    	var WL = cell.eq(1).text().split('c')[0].trim().toUpperCase();
 
 	    	games.push({
